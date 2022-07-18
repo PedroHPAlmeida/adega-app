@@ -37,7 +37,7 @@ CREATE TABLE produtos (
     nome VARCHAR(81) NOT NULL,
     marca VARCHAR(81) NOT NULL,
     quantidade_estoque BIGINT NOT NULL,
-    volume INTEGER NOT NULL,
+    volume DOUBLE NOT NULL,
     preco DOUBLE NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
