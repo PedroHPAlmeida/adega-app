@@ -25,12 +25,23 @@ CREATE TABLE fornecedores (
 
 CREATE TABLE clientes (
     id_cliente BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    telefone VARCHAR(15) NULL,
+    email VARCHAR(51) NULL,
+    tipo SMALLINT NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+CREATE TABLE clientes_pf (
+    id_cliente BIGINT PRIMARY KEY,
+    cpf VARCHAR(12) NOT NULL,
+    nome VARCHAR(81) NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE clientes_pj (
+    id_cliente BIGINT PRIMARY KEY,
     cnpj VARCHAR(15) NOT NULL,
     nome_fantasia VARCHAR(81) NOT NULL,
-    razao_social VARCHAR(81) NOT NULL,
-    telefone VARCHAR(15) NOT NULL,
-    email VARCHAR(51) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1;
+    razao_social VARCHAR(81) NOT NULL
+) ENGINE=InnoDB;
 
 CREATE TABLE produtos (
     id_produto BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -111,7 +122,7 @@ CREATE TABLE enderecos_cliente (
 CREATE TABLE enderecos_fornecedor (
     id_fornecedor BIGINT PRIMARY KEY NOT NULL,
     cep VARCHAR(9) NOT NULL,
-    numero VARCHAR(6w) NOT NULL,
+    numero VARCHAR(6) NOT NULL,
     logradouro VARCHAR(81) NOT NULL,
     bairro VARCHAR(81) NOT NULL,
     cidade VARCHAR(81) NOT NULL,
@@ -121,6 +132,14 @@ CREATE TABLE enderecos_fornecedor (
 ALTER TABLE pagamentos ADD CONSTRAINT fk_venda_pagamento
     FOREIGN KEY (id_cliente, id_funcionario)
     REFERENCES vendas (id_funcionario, id_cliente);
+
+ALTER TABLE clientes_pf ADD CONSTRAINT fk_cliente_pf
+    FOREIGN KEY (id_cliente)
+    REFERENCES clientes (id_cliente);
+
+ALTER TABLE clientes_pj ADD CONSTRAINT fk_cliente_pj
+    FOREIGN KEY (id_cliente)
+    REFERENCES clientes (id_cliente);
  
 ALTER TABLE compras ADD CONSTRAINT fk_fornecedor_compra
     FOREIGN KEY (id_fornecedor)
