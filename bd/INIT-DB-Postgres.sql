@@ -40,3 +40,11 @@ CREATE TABLE clientes_pj (
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
 );
 
+CREATE TABLE produtos (
+    id_produto BIGSERIAL PRIMARY KEY NOT NULL,
+    nome VARCHAR(81) NOT NULL,
+    marca VARCHAR(81) NOT NULL,
+    quantidade_estoque BIGINT NOT NULL,
+    volume REAL NOT NULL,
+    preco REAL NOT NULL
+);
