@@ -69,3 +69,25 @@ CREATE TABLE pagamentos (
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario) 
 );
+
+CREATE TABLE compras (
+    id_funcionario BIGINT NOT NULL,
+    id_fornecedor BIGINT NOT NULL,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+
+    PRIMARY KEY (id_funcionario, id_fornecedor),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedores (id_fornecedor) 
+);
+
+CREATE TABLE vendas (
+    id_funcionario BIGINT NOT NULL,
+    id_cliente BIGINT NOT NULL,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+
+    PRIMARY KEY (id_funcionario, id_cliente),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
+);
