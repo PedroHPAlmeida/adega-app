@@ -29,6 +29,7 @@ CREATE TABLE clientes_pf (
     id_cliente BIGINT PRIMARY KEY,
     cpf VARCHAR(12) NOT NULL,
     nome VARCHAR(81) NULL,
+
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
 );
 
@@ -37,6 +38,7 @@ CREATE TABLE clientes_pj (
     cnpj VARCHAR(15) NOT NULL,
     nome_fantasia VARCHAR(81) NOT NULL,
     razao_social VARCHAR(81) NOT NULL,
+
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
 );
 
@@ -47,4 +49,23 @@ CREATE TABLE produtos (
     quantidade_estoque BIGINT NOT NULL,
     volume REAL NOT NULL,
     preco REAL NOT NULL
+);
+
+CREATE TABLE materiais (
+    id_material BIGSERIAL PRIMARY KEY NOT NULL,
+    nome VARCHAR(81) NOT NULL,
+    quantidade INTEGER NOT NULL
+);
+
+CREATE TABLE pagamentos (
+    id_funcionario BIGINT NOT NULL,
+    id_cliente BIGINT NOT NULL,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+    tipo SMALLINT NOT NULL,
+    status SMALLINT NOT NULL,
+
+    PRIMARY KEY (id_cliente, id_funcionario),
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario) 
 );
