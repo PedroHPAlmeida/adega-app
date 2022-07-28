@@ -91,3 +91,15 @@ CREATE TABLE vendas (
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
 );
+
+CREATE TABLE itens_compra (
+    id_funcionario BIGINT NOT NULL,
+    id_fornecedor BIGINT NOT NULL,
+    id_produto BIGINT NOT NULL,
+    quantidade BIGINT NOT NULL,
+
+    PRIMARY KEY (id_fornecedor, id_produto, id_funcionario),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedores (id_fornecedor),
+    FOREIGN KEY (id_produto) REFERENCES produtos (id_produto)
+);
