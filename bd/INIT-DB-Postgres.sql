@@ -127,3 +127,27 @@ CREATE TABLE itens_venda (
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
     FOREIGN KEY (id_produto) REFERENCES produtos (id_produto)
 );
+
+CREATE TABLE enderecos_cliente (
+    id_cliente BIGINT PRIMARY KEY NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    numero VARCHAR(6) NOT NULL,
+    logradouro VARCHAR(81) NOT NULL,
+    bairro VARCHAR(81) NOT NULL,
+    cidade VARCHAR(81) NOT NULL,
+    estado VARCHAR(81) NOT NULL,
+
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+);
+
+CREATE TABLE enderecos_fornecedor (
+    id_fornecedor BIGINT PRIMARY KEY NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    numero VARCHAR(6) NOT NULL,
+    logradouro VARCHAR(81) NOT NULL,
+    bairro VARCHAR(81) NOT NULL,
+    cidade VARCHAR(81) NOT NULL,
+    estado VARCHAR(81) NOT NULL,
+
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedores (id_fornecedor)
+);
