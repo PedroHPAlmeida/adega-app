@@ -103,3 +103,15 @@ CREATE TABLE itens_compra (
     FOREIGN KEY (id_fornecedor) REFERENCES fornecedores (id_fornecedor),
     FOREIGN KEY (id_produto) REFERENCES produtos (id_produto)
 );
+
+CREATE TABLE es_materiais (
+    id_funcionario BIGINT NOT NULL,
+    id_material BIGINT NOT NULL,
+    data DATE NOT NULL,
+    quantidade BIGINT NOT NULL,
+    tipo BIT NOT NULL,
+
+    PRIMARY KEY (id_funcionario, id_material),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
+    FOREIGN KEY (id_material) REFERENCES materiais (id_material)
+);
