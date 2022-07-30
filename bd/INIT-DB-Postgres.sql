@@ -6,7 +6,7 @@ CREATE TABLE funcionarios (
     telefone VARCHAR(15) NOT NULL,
     email VARCHAR (51) NOT NULL,
     senha VARCHAR(21) NOT NULL,
-    nivel_acesso SMALLINT NOT NULL
+    nivel_acesso VARCHAR(12) NOT NULL
 );
 
 CREATE TABLE fornecedores (
@@ -22,7 +22,7 @@ CREATE TABLE clientes (
     id_cliente BIGSERIAL PRIMARY KEY NOT NULL,
     telefone VARCHAR(15) NULL,
     email VARCHAR(51) NULL,
-    tipo SMALLINT NOT NULL
+    tipo VARCHAR(3) NOT NULL
 );
 
 CREATE TABLE clientes_pf (
@@ -62,8 +62,8 @@ CREATE TABLE pagamentos (
     id_cliente BIGINT NOT NULL,
     data DATE NOT NULL,
     hora TIME NOT NULL,
-    tipo SMALLINT NOT NULL,
-    status SMALLINT NOT NULL,
+    tipo VARCHAR(12) NOT NULL,
+    status VARCHAR(12) NOT NULL,
 
     PRIMARY KEY (id_cliente, id_funcionario),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
@@ -97,6 +97,7 @@ CREATE TABLE itens_compra (
     id_fornecedor BIGINT NOT NULL,
     id_produto BIGINT NOT NULL,
     quantidade BIGINT NOT NULL,
+    preco_unitario REAL NOT NULL,
 
     PRIMARY KEY (id_fornecedor, id_produto, id_funcionario),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
@@ -109,7 +110,7 @@ CREATE TABLE es_materiais (
     id_material BIGINT NOT NULL,
     data DATE NOT NULL,
     quantidade BIGINT NOT NULL,
-    tipo BIT NOT NULL,
+    tipo VARCHAR(12) NOT NULL,
 
     PRIMARY KEY (id_funcionario, id_material),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
@@ -121,6 +122,7 @@ CREATE TABLE itens_venda (
     id_cliente BIGINT NOT NULL,
     id_produto BIGINT NOT NULL,
     quantidade BIGINT NOT NULL,
+    preco_unitario REAL NOT NULL,
 
     PRIMARY KEY (id_funcionario, id_cliente, id_produto),
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
