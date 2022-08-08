@@ -58,16 +58,11 @@ CREATE TABLE materiais (
 );
 
 CREATE TABLE pagamentos (
-    id_funcionario BIGINT NOT NULL,
-    id_cliente BIGINT NOT NULL,
+    id_pagamento BIGSERIAL NOT NULL,
     data DATE NOT NULL,
     hora TIME NOT NULL,
     tipo VARCHAR(12) NOT NULL,
-    status VARCHAR(12) NOT NULL,
-
-    PRIMARY KEY (id_cliente, id_funcionario),
-    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
-    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario) 
+    status VARCHAR(12) NOT NULL
 );
 
 CREATE TABLE compras (
@@ -85,11 +80,13 @@ CREATE TABLE vendas (
     id_venda BIGSERIAL PRIMARY KEY NOT NULL,
     id_funcionario BIGINT NOT NULL,
     id_cliente BIGINT NOT NULL,
+    id_pagamento BIGINT NOT NULL, /*para permitir vendas sem pagamento (fiado) basta remover o atributo 'not null'*/
     data DATE NOT NULL,
     hora TIME NOT NULL,
 
     FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
-    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente) 
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
+    FOREIGN KEY (id_pagamento) REFERENCES pagamentos (id_pagamento) 
 );
 
 CREATE TABLE itens_compra (
