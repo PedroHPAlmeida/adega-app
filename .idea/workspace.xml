@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1decaa9-46cc-4c1e-a2db-79987d5da098" name="Changes" comment="" />
+    <list default="true" id="f1decaa9-46cc-4c1e-a2db-79987d5da098" name="Changes" comment="fix: excluindo pasta 'backend' e movendo arquivos">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/adega-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adega-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/adega/apiadega/ApiadegaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/adega/apiadega/controllers/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/br/com/adega/apiadega/ApiadegaApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/system.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +26,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2BxZflc3adesSwuAUO0R5McAK2J" />
   <component name="ProjectViewState">
@@ -20,11 +57,38 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/thyag/OneDrive/Documentos/MEUS_PROJETOS/adega-app"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/pedro/Documentos/projetos/adega-app",
+    "nodejs_package_manager_path": "npm"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ApiadegaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <envs>
+        <env name="DATABASE_URL" value="jdbc:postgresql://localhost:15432/adega" />
+        <env name="DATABASE_USER" value="postgres" />
+        <env name="DATABASE_PASSWORD" value="123" />
+      </envs>
+      <module name="adega-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.adega.apiadega.ApiadegaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,7 +97,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657849802882</updated>
+      <workItem from="1660088609235" duration="103000" />
+      <workItem from="1660088721562" duration="440000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
