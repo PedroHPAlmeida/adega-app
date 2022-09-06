@@ -5,8 +5,21 @@ CREATE TABLE funcionarios (
     data_nascimento DATE NOT NULL,
     telefone VARCHAR(15) NOT NULL,
     email VARCHAR (51) NOT NULL,
-    senha VARCHAR(21) NOT NULL,
-    nivel_acesso VARCHAR(12) NOT NULL
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE funcionario_perfis (
+    id_funcionario BIGINT NOT NULL,
+    id_perfil BIGINT NOT NULL,
+    
+    PRIMARY KEY (id_funcionario, id_perfil),
+    FOREIGN KEY (id_funcionario) REFERENCES funcionarios (id_funcionario),
+    FOREIGN KEY (id_perfil) REFERENCES perfis (id_perfil)
+);
+
+CREATE TABLE perfis (
+    id_perfil BIGSERIAL PRIMARY KEY NOT NULL,
+    nome VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE fornecedores (
